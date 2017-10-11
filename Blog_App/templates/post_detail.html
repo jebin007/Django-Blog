@@ -1,27 +1,18 @@
-<html>
-        <body>
+{% extends 'base.html' %}
 
-            
-            {% if messages %}
-                <ul class='messages'>
-                    
-                {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>     
-                {% endfor %}
-                        
-                </ul> 
-            {% endif %}
-                
-            <h1>{{title}}</h1>
-            
-            
-                {{ instance.id }}<br/>
-                {{ instance.title }}<br/>
-                {{ instance.content }}<br/>
-                {{ instance.timestamp }}<br/>
-                {{ instance.updated }}<br/>
-            
-                
-        </body>
+
+{% block head_title %}
+    {{ instance.title }} | {{ block.super }}
+{% endblock head_title %}
     
-    </html>
+{% block content %}
+    <h1>{{title}}</h1>
+    {{ instance.id }}<br/>
+    {{ instance.title }}<br/>
+    {{ instance.content }}<br/>
+    {{ instance.timestamp }}<br/>
+    {{ instance.updated }}<br/>
+{% endblock content %}
+    
+           
+            
