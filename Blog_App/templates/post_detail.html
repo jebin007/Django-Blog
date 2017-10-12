@@ -6,12 +6,10 @@
 {% endblock head_title %}
     
 {% block content %}
-    <h1>{{title}}</h1>
-    {{ instance.id }}<br/>
-    {{ instance.title }}<br/>
-    {{ instance.content }}<br/>
-    {{ instance.timestamp }}<br/>
-    {{ instance.updated }}<br/>
+<div class='col-sm-6 col-sm-offset-3'>
+    <h1>{{title}} <small>{{ instance.timestamp }}</small></h1>
+    {{ instance.content|linebreaks }}<br/>
+</div>
 {% endblock content %}
     
            
