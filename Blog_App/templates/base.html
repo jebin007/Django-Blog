@@ -1,6 +1,8 @@
 <!--DOCTYPE html -->
+{% load staticfiles %}
 <html>
     <title>{% block head_title %}Try Django1.9 {% endblock head_title %}</title>
+    <link rel='stylesheet' href='{% static "css/base.css" %}' />
     <body>
         {% include 'messages_display.html' %}
         <div class='container'>
