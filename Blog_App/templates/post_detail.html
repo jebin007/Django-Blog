@@ -7,16 +7,16 @@
     
 {% block content %}
 <div class='col-sm-6 col-sm-offset-3'>
+    <h1>{{title}}</h1>
     {% if instance.image %}
         <img src='{{ instance.image.url }}' class='img-responsive' />
     {% endif %}
-    <h1>{{title}} <small>
-        {% if instance.draft %}
-        <span style='color:blue'>Draft</span>
-        <br/>
-        {% endif %}
+    <div class='caption'>
+    
+        {% if instance.draft %}<h3><span style='color:red'>Draft</span></h3><br/>{% endif %}
+        {% if instance.publish > today %}<h3>Future Post</h3><br/>{% endif %}
         {{ instance.publish }}
-    </small></h1>
+    
     {{ instance.content|linebreaks }}<br/>
  
 
